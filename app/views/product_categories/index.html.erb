@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <p style="color: green"><%= notice %></p>
+  <h1 class="text-center mb-4">Product-Categories</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product_categories.each do |product_category| %>
+        <tr>
+          <td><%= product_category.name %></td>
+          <td>
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <%= link_to "Show", product_category, class: "btn btn-primary mr-2" %>
+              </div>
+              <div class="col-auto">
+                <%= link_to "Edit", edit_product_category_path(product_category), class: "btn btn-secondary mr-2" %>
+              </div>
+              <div class="col-auto">
+                <%= link_to "Delete", product_category, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+              </div>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="text-center mt-4">
+    <%= link_to "New product category", new_product_category_path, class: "btn btn-success" %>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+/* Form container styles */
+.form-container {
+  width: 400px; /* Adjust width as needed */
+  margin: 50px auto; /* Center the form horizontally */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5; /* Light background color */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}
+
+/* Form field styles */
+.field {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Add weight to labels */
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Focus styles for better user experience */
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  outline: none; /* Remove default outline */
+  border-color: #4CAF50; /* Change border color on focus */
+}
+
+/* Submit button styles */
+input[type="submit"] {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out; /* Smooth transition effect */
+}
+
+input[type="submit"]:hover {
+  background-color: #45A049; /* Darker green on hover */
+}
+
+/* Error message styles */
+.error-messages {
+  color: red;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.error-messages li {
+  margin-bottom: 5px;
+}

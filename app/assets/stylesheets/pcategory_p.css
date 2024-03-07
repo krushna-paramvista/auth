@@ -1,0 +1,28 @@
+/* Table styles */
+#my-styled-table {
+  width: 600px; /* Adjust width as needed */
+  margin: 50px auto; /* Center the table horizontally */
+  border-collapse: collapse; /* Remove default table border spacing */
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left; /* Align content to the left */
+}
+
+th {
+  background-color: #f5f5f5; /* Light gray background for headers */
+  font-weight: bold;
+}
+
+/* Specific styling for this page */
+#<%= dom_id product_category %> {
+  /* Remove default margins and paddings for better control */
+  margin: 0;
+  padding: 0;
+}
+
+#<%= dom_id product_category %> td:first-child {
+  font-weight: bold; /* Make first column text bold */
+}

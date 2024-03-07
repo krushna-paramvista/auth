@@ -1,0 +1,31 @@
+<div class="container pt-4">
+
+  <div class="row pt-2">
+
+    <div class="col-">  <div class="card">
+        <img src="new1.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Card title</h6>
+          <strong>Product category:</strong>
+          <%= product.product_category_id %></td>
+          
+          <strong>Product Category Name:</strong>
+          <%= product.product_category&.name || "N/A" %></td>
+          
+          <strong>Name:</strong>
+          <%= product.name %></td>
+          
+          <td><strong>Description:</strong></td>
+          <td><%= product.description %></td>
+          
+          <strong>Price:</strong>
+          <%= product.price %></td>
+          
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
