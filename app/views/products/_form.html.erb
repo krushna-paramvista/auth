@@ -1,6 +1,4 @@
-
-
- <div class="form-container">
+<div class="form-container">
   <%= form_with(model: product) do |form| %>
     <% if product.errors.any? %>
       <div style="color: red">
@@ -13,13 +11,10 @@
       </div>
     <% end %>
 
-  
-
     <div class="field">
-       <%= form.label :product_category_id %>
-       <%= form.select :product_category_id, options_for_select([["Select_Category", nil]] + ProductCategory.all.map { |pc| [pc.name, pc.id] }) %>
+    <%= form.label :product_category_id %>
+      <%= form.select :product_category_id, options_for_select([["Select_Category", nil]] + ProductCategory.all.map { |pc| [pc.name, pc.id] }) %>
     </div>
-
 
     <div class="field">
       <%= form.label :name %>
@@ -37,8 +32,12 @@
     </div>
 
     <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div class="field">
       <%= form.submit %>
     </div>
   <% end %>
 </div>
-

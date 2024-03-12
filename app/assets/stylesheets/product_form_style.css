@@ -1,0 +1,53 @@
+/* Styling the form container */
+.form-container {
+  max-width: 500px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #b6d3e1;
+  border-radius: 10px; /* Border radius */
+  background-color: #f19d43; /* Background color */
+}
+
+/* Styling form fields */
+.field {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Border radius for input fields */
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+/* Styling the submit button */
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Border radius for the button */
+  cursor: pointer;
+}
+
+/* Styling error messages */
+div.error {
+  color: red;
+}
+
+/* Styling success messages */
+div.success {
+  color: green;
+}

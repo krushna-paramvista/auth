@@ -7,9 +7,17 @@
    <%= csp_meta_tag %>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+   <%= stylesheet_link_tag "application", "application_html_background_image", "data-turbo-track": "reload" %>
+   <%= stylesheet_link_tag "application", "card_image", "data-turbo-track": "reload"  %>
+   <%= stylesheet_link_tag "application", "product_form_style", "data-turbo-track": "reload"  %>
+
+
+
    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
    <%= turbo_include_tags %>
    <%= javascript_importmap_tags %>
+   
+   
 </head>
 <body>
     <%= render partial:"shared/navbar" %>
