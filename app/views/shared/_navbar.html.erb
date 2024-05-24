@@ -17,7 +17,7 @@
       
     </ul>
   <% if user_signed_in? %>
-    <%= current_user.email %> &nbsp;
+    <%= current_user.email %> &nbsp; 
     <div class="buttons">
       <%= link_to 'Log out', destroy_user_session_path, class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }  %>
      <%# <%= link_to 'Email Settings', edit_user_registration_path, class: 'btn btn-primary' %>
@@ -29,5 +29,17 @@
     </div>
   <% end %>
   </div>
+
+
+
+
+
+  <!-- Add this to your application layout or a navbar partial, e.g., app/views/shared/_navbar.html.erb -->
+  <% if user_signed_in? && current_user.role == 'admin' %>
+    <%#= link_to 'Admin', admin_orders_path, class: 'btn btn-primary' %>
+  <% end %>
+  
+
+
 </div>
 </nav>

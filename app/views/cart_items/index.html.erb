@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="my-4">All Cart Items</h1>
+  <% if @cart_items.present? %>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> <!-- Added Bootstrap grid classes -->
+      <% @cart_items.each do |cart_item| %>
+        <div class="col">
+          <div class="card h-100 mb-4"> <!-- Added mb-4 class for vertical margin -->
+            <% if cart_item.product.image.attached? %>
+              <%= image_tag cart_item.product.image, class: "card-img-top", alt: cart_item.product.name %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= cart_item.product.name %></h5>
+              <p class="card-text"><%= cart_item.product.description %></p>
+              <h6><strong>Price:</strong> <%= number_to_currency(cart_item.product.price, unit: '₹') %></h6>
+            </div>
+            <div class="card-footer">
+              <%= button_to "Remove", cart_item_path(cart_item), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-block" %>
+            </div>
+          </div>
+        </div> 
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Total Amount: <%= number_to_currency(@total_amount, unit: '₹', precision: 2) %></h5>
+      </div>
+    </div>
+    <%= form_with model: Order.new, url: place_order_orders_path, method: :post do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit "Place Order", class: "btn btn-primary" %>
+    <% end %>
+  <% else %>
+    <p>No items in the cart.</p>
+  <% end %>
+  
+  <%= link_to "Back to products", products_path, class: "btn btn-secondary me-2" %>
+</div>

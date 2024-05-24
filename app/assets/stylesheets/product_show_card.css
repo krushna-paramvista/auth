@@ -1,0 +1,10 @@
+.card{
+  width: 400px; /* Adjust width as needed */
+  height: 500px; /* Adjust height as needed */
+  
+}
+/* app/assets/stylesheets/custom.css */
+
+.custom-margin {
+  margin-left: 14rem; /* Adjust this value as needed to shift the card to the right */
+}

@@ -6,13 +6,14 @@ class ProductCategoriesController < ApplicationController
     @product_categories = ProductCategory.all
   end
 
-  # GET /product_categories/1 or /product_categories/1.json
-  # app/controllers/products_controller.rb
+# GET /product_categories/1 or /product_categories/1.json
+# app/controllers/products_controller.rb
 class ProductsController < ApplicationController
   def show
     product = Product.find(params[:id])
     category_name = product.product_category.name
     render json: { product: product, category_name: category_name }
+    
   end
 end
 
@@ -64,13 +65,13 @@ end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product_category
-      @product_category = ProductCategory.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product_category
+    @product_category = ProductCategory.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def product_category_params
-      params.require(:product_category).permit(:name)
-    end
+  # Only allow a list of trusted parameters through.
+  def product_category_params
+    params.require(:product_category).permit(:name)
+  end
 end

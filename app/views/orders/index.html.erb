@@ -1,0 +1,4 @@
+<!-- app/views/admin/orders.html.erb -->
+<h1>All Placed Orders</h1>
+<%= render partial: 'orders/orders_table', locals: { orders: @orders } %>
+<%= link_to 'Download Orders as PDF', orders_path(format: :pdf), class: 'btn btn-primary' %>

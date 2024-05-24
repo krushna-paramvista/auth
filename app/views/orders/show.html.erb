@@ -1,0 +1,15 @@
+<!-- app/views/orders/show.html.erb -->
+<div class="container">
+  <h1>Order Details</h1>
+  <p>Order ID: <%= @order.id %></p>
+  <p>User: <%= @order.user.email %></p>
+
+  <h2>Items:</h2>
+  <ul>
+    <% @order.cart_items.each do |item| %>
+      <li><%= item.product.name %> - <%= number_to_currency(item.product.price) %></li>
+    <% end %>
+  </ul>
+
+  
+</div>

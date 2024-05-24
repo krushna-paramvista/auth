@@ -10,7 +10,9 @@ gem "rails", "~> 7.0.8"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
+
+gem 'pg'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -48,6 +50,25 @@ gem "bootsnap", require: false
 
 gem "devise"
 gem 'rubocop', require: false
+gem 'cancancan'
+gem 'will_paginate', '~> 3.3'
+gem 'will_paginate-bootstrap5'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'whenever', require: false
+gem 'sidekiq'
+gem 'redis'
+gem 'rubyzip', '~> 1.2.1'
+gem 'axlsx', '~> 3.0.0.pre'
+gem 'caxlsx_rails'
+gem 'spreadsheet'
+gem 'rubyXL'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
+
+
+
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"

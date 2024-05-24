@@ -1,20 +1,19 @@
 <div class="container pt-4">
   <div class="row pt-2">
-    <div class="col-">
-      <div class="card">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card h-100">
         <% if product.image.attached? %>
           <%= image_tag product.image, class: "card-img-top" %>
         <% end %>
 
         <div class="card-body">
           
-
-          <strong>Product category:</strong>
-          <%= product.product_category_id %></td>
-
-          <strong>Product Category Name:</strong>
-          <%= product.product_category&.name || "N/A" %></td>
-
+         <!--<strong>Product category:</strong>
+        <%= product.product_category_id %></td>
+        
+        <strong>Product Category Name:</strong>
+        <%= product.product_category&.name || "N/A" %></td> -->
+        
           <strong>Name:</strong>
           <%= product.name %></td>
 
@@ -22,12 +21,10 @@
           <%= product.description %></td>
 
           <strong>Price:</strong>
-          <%= product.price %></td>
+          <%= number_to_currency(product.price, unit: '₹') %></td>
+          
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-

@@ -1,0 +1,10 @@
+# app/views/order_mailer/order_confirmation.html.erb
+<h1>Order Confirmation</h1>
+<p>Hi <%= @order.user.name %>,</p>
+<p>Your order details:</p>
+<ul>
+  <% @order.cart_items.each do |item| %>
+    <li><%= item.product.name %> - <%= item.quantity %> x <%= number_to_currency(item.product.price) %></li>
+  <% end %>
+</ul>
+

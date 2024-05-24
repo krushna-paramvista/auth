@@ -70,4 +70,16 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'live.smtp.mailtrap.io', # Replace with your SMTP server address
+    port: 587, # Replace with your SMTP server port
+    domain: 'demomailtrap.com', # Replace with your domain
+    user_name: 'api', # Replace with your SMTP username
+    password: '85f53fd15017bf1b309f53fe5211e10a', # Replace with your SMTP password
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
 end

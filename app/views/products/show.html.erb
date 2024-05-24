@@ -1,23 +1,48 @@
-<% if notice.present? %>
-  <p style="color: green"><%= notice %></p>
-<% end %>
+<!-- app/views/products/show.html.erb -->
 
-<%= render @product %>
-
-<div class="mt-4 d-flex justify-content-center">
-  <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-primary me-2" %>
-  <%= link_to "Back to products", products_path, class: "btn btn-secondary me-2" %>
-  <%= button_to "Destroy this product", @product, method: :delete, class: "btn btn-danger" %>
+<div style="margin-top: 5px; margin-right: -50px;">
+    <%= link_to "View Cart Items", cart_items_path, class: "btn btn-primary mb-3", style: "float:right;" %>
 </div>
 
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card custom-margin"> <!-- Add custom-margin class for additional right alignment -->
+        <div class="card-body">
+          <!-- Notice message -->
+          <% if notice.present? %>
+            <p style="color: green"><%= notice %></p>
+          <% end %>
 
+          <!-- Product Image -->
+          <div class="text-center">
+            <% if @product.image.attached? %>
+              <%= image_tag @product.image, class: "img-fluid", alt: @product.name %>
+            <% end %>
+          </div>
 
+          <!-- Product Details -->
+          <h1 class="card-title text-center"><%= @product.name %></h1>
+          <p class="card-text text-center"><%= @product.description %></p>
+          <h4 class="card-text text-center">Price: <%= number_to_currency(@product.price, unit: '₹') %></h4>
 
-<%# <div id="product-details">
-<%#  <%= render 'product', product: @product, product_category_name: @product_category_name %>
- </div>   
+          <!-- Add to Cart button -->
+          <div class="text-center mt-4">
+            <%= button_to 'Add to Cart', cart_items_path(product_id: @product.id), method: :post, class: 'btn btn-primary' %>
+            <%= button_to "Destroy this product", @product, method: :delete, class: "btn btn-danger" %>
+          </div>
 
- 
-
-
-  
+          <!-- Action Buttons -->
+          <div class="text-center mt-4">
+            <%#  <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-primary me-2" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-4">
+    <div class="col-12 text-center">
+      <%= link_to "Back to products", products_path, class: "btn btn-secondary me-2" %>
+    </div>
+  </div>
+</div>

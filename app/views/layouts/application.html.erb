@@ -11,6 +11,9 @@
    <%= stylesheet_link_tag "application", "card_image", "data-turbo-track": "reload"  %>
    <%= stylesheet_link_tag "application", "product_form_style", "data-turbo-track": "reload"  %>
 
+   
+   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   <%= stylesheet_link_tag 'product_show_card', media: 'all' %>
 
 
    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -18,6 +21,9 @@
    <%= javascript_importmap_tags %>
    
    
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+  
 </head>
 <body>
     <%= render partial:"shared/navbar" %>
