@@ -69,7 +69,13 @@ GEM
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    axlsx (3.0.0.pre)
+      htmlentities (~> 4.3, >= 4.3.4)
+      mimemagic (~> 0.3)
+      nokogiri (~> 1.8, >= 1.8.2)
+      rubyzip (~> 1.2, >= 1.2.1)
     bcrypt (3.1.20)
+    bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
@@ -84,6 +90,14 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    caxlsx (3.0.0)
+      htmlentities (~> 4.3, >= 4.3.4)
+      mimemagic (~> 0.3)
+      nokogiri (~> 1.8, >= 1.8.2)
+      rubyzip (~> 1.2, >= 1.2.1)
+    caxlsx_rails (0.6.3)
+      actionpack (>= 3.1)
+      caxlsx (>= 3.0)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
@@ -108,6 +122,7 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    htmlentities (4.3.4)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
@@ -134,6 +149,9 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     method_source (1.1.0)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.1.5)
     minitest (5.23.0)
     msgpack (1.7.2)
@@ -231,7 +249,11 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.31.3)
       parser (>= 3.3.1.0)
+    ruby-ole (1.2.13.1)
     ruby-progressbar (1.13.0)
+    rubyXL (3.4.6)
+      nokogiri (>= 1.4.4)
+      rubyzip (>= 1.1.6)
     rubyzip (1.2.4)
     selenium-webdriver (3.8.0)
       childprocess (~> 0.5)
@@ -241,6 +263,9 @@ GEM
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
       redis-client (>= 0.19.0)
+    spreadsheet (1.3.1)
+      bigdecimal
+      ruby-ole
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -292,9 +317,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  axlsx (~> 3.0.0.pre)
   bootsnap
   cancancan
   capybara
+  caxlsx_rails
   debug
   devise
   dotenv-rails
@@ -305,8 +332,11 @@ DEPENDENCIES
   rails (~> 7.0.8)
   redis
   rubocop
+  rubyXL
+  rubyzip (~> 1.2.1)
   selenium-webdriver
   sidekiq
+  spreadsheet
   sprockets-rails
   stimulus-rails
   turbo-rails
