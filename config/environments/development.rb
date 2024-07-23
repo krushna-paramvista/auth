@@ -80,6 +80,7 @@ Rails.application.configure do
     password: '85f53fd15017bf1b309f53fe5211e10a', # Replace with your SMTP password
     authentication: :plain,
     enable_starttls_auto: true
+    
   }
 
 end

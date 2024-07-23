@@ -33,11 +33,14 @@ Rails.application.routes.draw do
   # get 'admin/download_orders', to: 'admin#download_orders', as: 'download_orders_admin'
 
 
+  post '/identity_verification', to: 'home#identity_verification'
 
   root 'home#homepage'
   get 'homepage', to: 'home#homepage'
   get 'dashboard', to: 'home#dashboard'
   get 'users', to: 'users#index'
+
+  post 'webhook', to: 'home#shopify_webhook'
 
   devise_for :users
 end
